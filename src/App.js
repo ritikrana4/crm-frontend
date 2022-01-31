@@ -1,11 +1,14 @@
 import "./App.css";
+import { DefaultLayout } from "./layouts/DefaultLayout";
 
 import { Entry } from "./pages/entry/Entry.page";
 
 function App() {
   return (
     <div>
-      <Entry />
+      <DefaultLayout>
+        <Entry/>
+      </DefaultLayout>
     </div>
   );
 }

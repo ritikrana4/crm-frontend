@@ -1,8 +1,13 @@
 import React from "react";
 import { Col, Container, Form, Row, Button } from "react-bootstrap";
-import PropTypes from "prop-types" 
+import PropTypes from "prop-types";
 
-export const PasswordReset = ({handleOnResetSubmit , handleOnchange, email,formSwitcher}) => {
+export const PasswordReset = ({
+  handleOnResetSubmit,
+  handleOnchange,
+  email,
+  formSwitcher,
+}) => {
   return (
     <div>
       <Container>
@@ -27,8 +32,9 @@ export const PasswordReset = ({handleOnResetSubmit , handleOnchange, email,formS
               </Button>
             </Form>
             <hr />
-            <a href="#!" onClick={()=>formSwitcher('login')}>Login</a>
-       
+            <a href="#!" onClick={() => formSwitcher("login")}>
+              Login
+            </a>
           </Col>
         </Row>
       </Container>
@@ -37,8 +43,8 @@ export const PasswordReset = ({handleOnResetSubmit , handleOnchange, email,formS
 };
 
 PasswordReset.propTypes = {
-    handleOnchange: PropTypes.func.isRequired,
-    handleOnResetSubmit: PropTypes.func.isRequired,
-    formSwitcher : PropTypes.func.isRequired,
-    email: PropTypes.string.isRequired,
-  };
+  handleOnchange: PropTypes.func.isRequired,
+  handleOnResetSubmit: PropTypes.func.isRequired,
+  formSwitcher: PropTypes.func.isRequired,
+  email: PropTypes.string.isRequired,
+};

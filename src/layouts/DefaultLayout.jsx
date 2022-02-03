@@ -1,10 +1,10 @@
-import React from 'react'
-import { Footer } from './partials/Footer.component'
-import { Header } from './partials/Header.component'
+import React from "react";
+import { Footer } from "./partials/Footer.component";
+import { Header } from "./partials/Header.component";
 
-export const DefaultLayout =({children})=>{
-    return  (
-        <div className="default-layout">
+export const DefaultLayout = ({ children }) => {
+  return (
+    <div className="default-layout">
       <header className="header mb-2">
         <Header />
       </header>
@@ -15,5 +15,5 @@ export const DefaultLayout =({children})=>{
         <Footer />
       </footer>
     </div>
-    )
-}
+  );
+};

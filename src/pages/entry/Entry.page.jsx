@@ -4,12 +4,11 @@ import Jumbotron from "react-bootstrap/Jumbotron";
 import { Login } from "../../components/login/Login.component";
 import { PasswordReset } from "../../components/password-reset/PasswordReset.component";
 
-
 export const Entry = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [form,setForm] = useState("login");
-  
+  const [form, setForm] = useState("login");
+
   const handleOnchange = (e) => {
     const { name, value } = e.target;
     switch (name) {
@@ -40,27 +39,30 @@ export const Entry = () => {
     //call password reset  api
   };
 
-  const formSwitcher = (formtype)=>{
-      setForm(formtype);
-  }
-  
+  const formSwitcher = (formtype) => {
+    setForm(formtype);
+  };
+
   return (
     <div className="entry-page bg-info">
       <Jumbotron>
-       {(form === 'login') &&
-        (<Login
-          handleOnchange={handleOnchange}
-          handleOnSubmit={handleOnSubmit}
-          email={email}
-          password={password}
-          formSwitcher = {formSwitcher}
-          />)
-        }
-       {(form ==='passwordreset') && (<PasswordReset
-       handleOnchange={handleOnchange}
-       handleOnResetSubmit={handleOnResetSubmit}
-       email={email}
-       formSwitcher = {formSwitcher} />)}
+        {form === "login" && (
+          <Login
+            handleOnchange={handleOnchange}
+            handleOnSubmit={handleOnSubmit}
+            email={email}
+            password={password}
+            formSwitcher={formSwitcher}
+          />
+        )}
+        {form === "passwordreset" && (
+          <PasswordReset
+            handleOnchange={handleOnchange}
+            handleOnResetSubmit={handleOnResetSubmit}
+            email={email}
+            formSwitcher={formSwitcher}
+          />
+        )}
       </Jumbotron>
     </div>
   );
